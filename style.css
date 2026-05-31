@@ -7,11 +7,11 @@
 
 /* --- CSS variables (change these to retheme the whole site) --- */
 :root {
-  --bg:        #faf9f6;
+  --bg:        #79d2a6;
   --surface:   #eff5ef;
   --border:    #8fbc8f;        /* light seafoam green */
   --text:      #2a2825;
-  --muted:     #7a756e;
+  --muted:     #a1c4a1;
   --accent:    #006400;        /* dark green */
   --accent-lt: #a1c4a1;
   --radius:    8px;
