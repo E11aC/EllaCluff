@@ -9,11 +9,11 @@
 :root {
   --bg:        #d3ebd8;
   --surface:   #cbf7d4;
-  --border:    #eff5ef;        /* light seafoam green */
+  --border:    #4d966f;        /* light seafoam green */
   --text:      #2a2825;
   --muted:     #a1c4a1;
   --accent:    #006400;        /* dark green */
-  --accent-lt: #a8fbc8f;
+  --accent-lt: #4d964d;
   --radius:    8px;
   --max-w:     720px;
   --nav-h:     64px;
