@@ -8,10 +8,10 @@
 /* --- CSS variables (change these to retheme the whole site) --- */
 :root {
   --bg:        #d3ebd8;
-  --surface:   #cbf7d4;
+  --surface:   #c5e8cc;
   --border:    #4d966f;        /* light seafoam green */
   --text:      #2a2825;
-  --muted:     #a1c4a1;
+  --muted:     #487848;
   --accent:    #006400;        /* dark green */
   --accent-lt: #4d964d;
   --radius:    8px;
