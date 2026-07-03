@@ -5,6 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects — Ella Cluff</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-layout {
+      display: flex;
+      align-items: flex-start;
+      gap: 3rem;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 5rem;
+    }
+
+    .sidebar {
+      width: 160px;
+      flex-shrink: 0;
+      position: sticky;
+      top: calc(var(--nav-h) + 1.5rem);
+    }
+
+    .sidebar p {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 0.1rem; }
+
+    .sidebar a {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.3rem 0.6rem;
+      border-left: 2px solid var(--border);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .sidebar a:hover, .sidebar a.toc-active {
+      color: var(--accent);
+      border-left-color: var(--accent);
+      font-weight: 500;
+    }
+
+    .page-layout main { flex: 1; min-width: 0; padding: 0; max-width: none; margin: 0; }
+
+    .scroll-target { scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
+  </style>
 </head>
 <body>
 
@@ -18,96 +66,108 @@
     </ul>
   </nav>
 
-  <!-- ===== Main content ===== -->
-  <main>
+  <!-- ===== Two-column layout ===== -->
+  <div class="page-layout">
 
-    <div class="page-header">
-      <h1>Projects & Hobbies</h1>
-      <p>Things I've built for fun, class, or just to learn something new.</p>
-    </div>
+    <aside class="sidebar">
+      <p>On this page</p>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#hobbies">Hobbies & Interests</a></li>
+      </ul>
+    </aside>
 
-    <!-- Personal Projects -->
-    <section>
-      <h2>Projects</h2>
+    <main>
 
-      <div class="card">
-        <h3>Food Cost on Franklin Street Analysis</h3>
-        <p class="meta">The Daily Tar Heel · 2024</p>
-        <p>
-          I collected data on the cost of food on Franklin Street in Chapel Hill, NC. Then, with my team on the data desk at the Daily Tar Heel, put together an interactive map to show average costs across the area.
-        </p>
-        <span class="tag">Data Collection</span>
-        <span class="tag">Data Analysis and Visualization</span>
-        <p style="margin-top: 0.75rem; margin-bottom: 0;">
-          <a href="https://dailytarheel.com/article/lifestyle-franklin-restaurant-affordability-20241125" target="_blank">Article ↗</a>
-        </p>
+      <div class="page-header">
+        <h1>Projects & Hobbies</h1>
+        <p>Things I've built for fun, class, or just to learn something new.</p>
       </div>
 
-      <div class="card">
-        <h3>Predicting Playoff Statistics</h3>
-        <p class="meta">Class project · Fall 2025</p>
-        <p>
-          For my sports analytics course, my group and I were tasked with predicting playoff statistical outcomes using season data.
-          We built statistical models using Python to try to best predict statistics like points, total yards, etc.
-        </p>
-        <span class="tag">R</span>
-        <span class="tag">Python</span>
-      </div>
+      <!-- Personal Projects -->
+      <section id="projects" class="scroll-target">
+        <h2>Projects</h2>
 
-      <div class="card">
-        <h3>This Website</h3>
-        <p class="meta">Personal project · 2026</p>
-        <p>
-          Built from some AI and YouTube help with plain HTML and CSS — no frameworks.
-        </p>
-        <span class="tag">HTML</span>
-        <span class="tag">CSS</span>
-        <span class="tag">Prompt Engineering</span>
-      </div>
-    </section>
+        <div class="card">
+          <h3>Food Cost on Franklin Street Analysis</h3>
+          <p class="meta">The Daily Tar Heel · 2024</p>
+          <p>I collected data on the cost of food on Franklin Street in Chapel Hill, NC. Then, with my team on the data desk at the Daily Tar Heel, put together an interactive map to show average costs across the area.</p>
+          <span class="tag">Data Collection</span>
+          <span class="tag">Data Analysis and Visualization</span>
+          <p style="margin-top: 0.75rem; margin-bottom: 0;">
+            <a href="https://dailytarheel.com/article/lifestyle-franklin-restaurant-affordability-20241125" target="_blank">Article ↗</a>
+          </p>
+        </div>
 
-    <hr />
+        <div class="card">
+          <h3>Predicting Playoff Statistics</h3>
+          <p class="meta">Class project · Fall 2025</p>
+          <p>For my sports analytics course, my group and I were tasked with predicting playoff statistical outcomes using season data. We built statistical models using Python to try to best predict statistics like points, total yards, etc.</p>
+          <span class="tag">R</span>
+          <span class="tag">Python</span>
+        </div>
 
-    <!-- Hobbies -->
-    <section>
-      <h2>Hobbies & Interests</h2>
+        <div class="card">
+          <h3>This Website</h3>
+          <p class="meta">Personal project · 2026</p>
+          <p>Built from some AI and YouTube help with plain HTML and CSS — no frameworks.</p>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Prompt Engineering</span>
+        </div>
+      </section>
 
-      <div class="card">
-        <h3>Hand Crafts</h3>
-        <p>
-          I really enjoy working with my hands. Some of my favorite crafting hobbies include crocheting, knitting, and painting!
-        </p>
-      </div>
+      <hr />
 
-      <div class="card">
-        <h3>Reading</h3>
-        <p>
-          I enjoy reading novels and can devour them in a day or two. Recent reads include
-          <em>The Heart is a Lonely Hunter</em> and <em>The Bookclub for Troublesome Women</em>.
-        </p>
-      </div>
+      <!-- Hobbies -->
+      <section id="hobbies" class="scroll-target">
+        <h2>Hobbies & Interests</h2>
 
-      <div class="card">
-        <h3>Getting Outside</h3>
-        <p>
-          I love going for walks and hikes when the weather is nice. I have a backpacking trip in the works (has gotten rained out multiple times) for a small part of the Appalachian Trail. I've also recently started playing pickleball!
-        </p>
-      </div>
-      
-      <div class="card">
-        <h3>Weightlifting</h3>
-        <p>
-          I've been doing strength training on and off for years, but have worked it into my daily routine this year.
-        </p>
-      </div>
-    </section>
+        <div class="card">
+          <h3>Hand Crafts</h3>
+          <p>I really enjoy working with my hands. Some of my favorite crafting hobbies include crocheting, knitting, and painting!</p>
+        </div>
 
-  </main>
+        <div class="card">
+          <h3>Reading</h3>
+          <p>I enjoy reading novels and can devour them in a day or two. Recent reads include <em>The Heart is a Lonely Hunter</em> and <em>The Bookclub for Troublesome Women</em>.</p>
+        </div>
+
+        <div class="card">
+          <h3>Getting Outside</h3>
+          <p>I love going for walks and hikes when the weather is nice. I have a backpacking trip in the works (has gotten rained out multiple times) for a small part of the Appalachian Trail. I've also recently started playing pickleball!</p>
+        </div>
+
+        <div class="card">
+          <h3>Weightlifting</h3>
+          <p>I've been doing strength training on and off for years, but have worked it into my daily routine this year.</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
 
   <!-- ===== Footer ===== -->
   <footer>
     <p>Built by hand · © 2026 Ella Cluff</p>
   </footer>
+
+  <script>
+    const sections = document.querySelectorAll('.scroll-target');
+    const links    = document.querySelectorAll('.sidebar a');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(l => l.classList.remove('toc-active'));
+          const active = document.querySelector(`.sidebar a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('toc-active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
 
 </body>
 </html>
