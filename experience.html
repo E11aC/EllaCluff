@@ -5,6 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Experience — Ella Cluff</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-layout {
+      display: flex;
+      align-items: flex-start;
+      gap: 3rem;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 5rem;
+    }
+
+    .sidebar {
+      width: 160px;
+      flex-shrink: 0;
+      position: sticky;
+      top: calc(var(--nav-h) + 1.5rem);
+    }
+
+    .sidebar p {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 0.1rem; }
+
+    .sidebar a {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.3rem 0.6rem;
+      border-left: 2px solid var(--border);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .sidebar a:hover, .sidebar a.toc-active {
+      color: var(--accent);
+      border-left-color: var(--accent);
+      font-weight: 500;
+    }
+
+    .page-layout main { flex: 1; min-width: 0; padding: 0; max-width: none; margin: 0; }
+
+    .scroll-target { scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
+  </style>
 </head>
 <body>
 
@@ -18,171 +66,180 @@
     </ul>
   </nav>
 
-  <!-- ===== Main content ===== -->
-  <main>
+  <!-- ===== Two-column layout ===== -->
+  <div class="page-layout">
 
-    <div class="page-header">
-      <h1>Experience & Coursework</h1>
-      <p>My academic background, work experience, and skills so far.</p>
-    </div>
+    <aside class="sidebar">
+      <p>On this page</p>
+      <ul>
+        <li><a href="#work">Work Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#coursework">Coursework</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+    </aside>
 
-    <!-- Work / Internships -->
-    <section>
-      <h2>Work Experience</h2>
+    <main>
 
-      <div class="card">
-        <h3>SMB Customer Advisory Intern</h3>
-        <p class="meta">SAS · May 2026 – Present · Cary, NC</p>
-        <p>
-            TBD (intern project here)
-        </p>
-        <span class="tag">SAS Visual Analytics Certification</span>
+      <div class="page-header">
+        <h1>Experience & Coursework</h1>
+        <p>My academic background, work experience, and skills so far.</p>
       </div>
 
-      <div class="card">
-        <h3>Resident Advisor</h3>
-        <p class="meta">Carolina Housing · August 2024 – Present · Chapel Hill, NC</p>
-        <p>
-          Responsible for over 50 residents, foster community on the hall through planning educational events, collaborating with coworkers, responding to emergency situations
-        </p>
-        <span class="tag">Time Management</span>
-        <span class="tag">Communication</span>
-        <span class="tag">Event Organization</span>
-      </div>
+      <!-- Work Experience -->
+      <section id="work" class="scroll-target">
+        <h2>Work Experience</h2>
 
-            <div class="card">
-        <h3>Licensing Operations Intern</h3>
-        <p class="meta">SAS · October 2025 – May 2026 · Cary, NC</p>
-        <p>
-            Verify pricing for sales opportunities, prepare sales opportunities for invoicing, update sales opportunity database with updated quotes, test quote and pricing configurator.
-        </p>
-        <span class="tag">Teamwork and Collaboration</span>
-      </div>
+        <div class="card">
+          <h3>SMB Customer Advisory Intern</h3>
+          <p class="meta">SAS · May 2026 – Present · Cary, NC</p>
+          <p>TBD (intern project here)</p>
+          <span class="tag">SAS Visual Analytics Certification</span>
+        </div>
 
-            <div class="card">
-        <h3>Healthcare Customer Advisory Intern</h3>
-        <p class="meta">SAS · May 2025 – August 2025 · Cary, NC</p>
-        <p>
-            Created an end-to-end customer-facing demonstration of SAS Viya software using readmission healthcare data
-        </p>
-        <span class="tag">SAS Base Programming Certification</span>
-      </div>
+        <div class="card">
+          <h3>Resident Advisor</h3>
+          <p class="meta">Carolina Housing · August 2024 – Present · Chapel Hill, NC</p>
+          <p>Responsible for over 50 residents, foster community on the hall through planning educational events, collaborating with coworkers, responding to emergency situations.</p>
+          <span class="tag">Time Management</span>
+          <span class="tag">Communication</span>
+          <span class="tag">Event Organization</span>
+        </div>
 
-      <div class="card">
-        <h3>Barista and Barista Trainer</h3>
-        <p class="meta">Starbucks · June 2022 – May 2025 · Holly Springs, NC</p>
-        <p>
-          Follow company standards to craft drinks, provide friendly customer service, provide training for new employees
-        </p>
-        <span class="tag">Training</span>
-        <span class="tag">Inventory Tracking</span>
-      </div>
+        <div class="card">
+          <h3>Licensing Operations Intern</h3>
+          <p class="meta">SAS · October 2025 – May 2026 · Cary, NC</p>
+          <p>Verify pricing for sales opportunities, prepare sales opportunities for invoicing, update sales opportunity database with updated quotes, test quote and pricing configurator.</p>
+          <span class="tag">Teamwork and Collaboration</span>
+        </div>
 
-      <div class="card">
-        <h3>Cashier</h3>
-        <p class="meta">Harris Teeter · Mar 2021 – June 2022 · Holly Springs, NC</p>
-        <p>
-          Provide friendly customer service, check out orders efficiently and accurately
-        </p>
-        <span class="tag">Customer Service</span>
-      </div>
-    </section>
+        <div class="card">
+          <h3>Healthcare Customer Advisory Intern</h3>
+          <p class="meta">SAS · May 2025 – August 2025 · Cary, NC</p>
+          <p>Created an end-to-end customer-facing demonstration of SAS Viya software using readmission healthcare data.</p>
+          <span class="tag">SAS Base Programming Certification</span>
+        </div>
 
-    <hr />
+        <div class="card">
+          <h3>Barista and Barista Trainer</h3>
+          <p class="meta">Starbucks · June 2022 – May 2025 · Holly Springs, NC</p>
+          <p>Follow company standards to craft drinks, provide friendly customer service, provide training for new employees.</p>
+          <span class="tag">Training</span>
+          <span class="tag">Inventory Tracking</span>
+        </div>
 
-    <!-- Education -->
-    <section>
-      <h2>Education</h2>
+        <div class="card">
+          <h3>Cashier</h3>
+          <p class="meta">Harris Teeter · Mar 2021 – June 2022 · Holly Springs, NC</p>
+          <p>Provide friendly customer service, check out orders efficiently and accurately.</p>
+          <span class="tag">Customer Service</span>
+        </div>
+      </section>
 
-      <div class="card">
-        <h3>B.S. in Statistics and Analytics, Data Science</h3>
-        <p class="meta">University of North Carolina at Chapel Hill · Expected Dec 2026 · GPA: 3.4</p>
-        <p>
-          Daily Tar Heel data desk, Water Institute research group, American Sign Language Club, Taekwondo Club, HackNC, PearlHacks, Datafest
-        </p>
-        <span class="tag">Python</span>
-        <span class="tag">R</span>
-        <span class="tag">Data Analysis and Visualization</span>
-        <span class="tag">Optimization</span>
-        <span class="tag">Simulation</span>
-        <span class="tag">Probability</span>
-        <span class="tag">Statistical Modeling and Analysis</span>
-      </div>
-    </section>
+      <hr />
 
-    <hr />
+      <!-- Education -->
+      <section id="education" class="scroll-target">
+        <h2>Education</h2>
 
-    <!-- Relevant Coursework -->
-    <section>
-      <h2>Relevant Coursework</h2>
-      <p style="color: var(--muted); margin-bottom: 1rem;">
-        Classes I've taken that are most relevant to my interests and career goals.
-      </p>
+        <div class="card">
+          <h3>B.S. in Statistics and Analytics, Data Science</h3>
+          <p class="meta">University of North Carolina at Chapel Hill · Expected Dec 2026 · GPA: 3.4</p>
+          <p>Daily Tar Heel data desk, Water Institute research group, American Sign Language Club, Taekwondo Club, HackNC, PearlHacks, Datafest.</p>
+          <span class="tag">Python</span>
+          <span class="tag">R</span>
+          <span class="tag">Data Analysis and Visualization</span>
+          <span class="tag">Optimization</span>
+          <span class="tag">Simulation</span>
+          <span class="tag">Probability</span>
+          <span class="tag">Statistical Modeling and Analysis</span>
+        </div>
+      </section>
 
-      <div class="card">
-        <h3>Machine Learning</h3>
-        <p class="meta">STOR 565 · Fall 2025</p>
-        <p>
-          Covered linear and logistic regression, decision tree, forest, and gradient boosting algorithms (through programming and on paper)
-        </p>
-      </div>
+      <hr />
 
-      <div class="card">
-        <h3>Intro to Optimization</h3>
-        <p class="meta">STOR 415 · Spring 2026</p>
-        <p>
-          Worked with primarily linear program problems and solved for optimal solutions with respect to constraints in GAMS, graphically, and through algebraic methods.
-        </p>
-      </div>
+      <!-- Relevant Coursework -->
+      <section id="coursework" class="scroll-target">
+        <h2>Relevant Coursework</h2>
+        <p style="color: var(--muted); margin-bottom: 1rem;">Classes I've taken that are most relevant to my interests and career goals.</p>
 
-      <div class="card">
-        <h3>Sports Analytics</h3>
-        <p class="meta">STOR 538 · Fall 2025</p>
-        <p>
-          Supervised and learning, data visualization, and model evaluation.
-          Final project: creating predictions using statistical models for NFL playoff statistics based on season data.
-        </p>
-      </div>
+        <div class="card">
+          <h3>Machine Learning</h3>
+          <p class="meta">STOR 565 · Fall 2025</p>
+          <p>Covered linear and logistic regression, decision tree, forest, and gradient boosting algorithms (through programming and on paper).</p>
+        </div>
 
+        <div class="card">
+          <h3>Intro to Optimization</h3>
+          <p class="meta">STOR 415 · Spring 2026</p>
+          <p>Worked with primarily linear program problems and solved for optimal solutions with respect to constraints in GAMS, graphically, and through algebraic methods.</p>
+        </div>
 
-    <hr />
+        <div class="card">
+          <h3>Sports Analytics</h3>
+          <p class="meta">STOR 538 · Fall 2025</p>
+          <p>Supervised learning, data visualization, and model evaluation. Final project: creating predictions using statistical models for NFL playoff statistics based on season data.</p>
+        </div>
+      </section>
 
-    <!-- Skills -->
-    <section>
-      <h2>Skills</h2>
-      <div style="margin-top: 0.5rem;">
-        <strong style="font-size: 0.85rem; color: var(--muted); display:block; margin-bottom:0.4rem;">Languages</strong>
-        <span class="tag">Python</span>
-        <span class="tag">R Programming</span>
-        <span class="tag">SAS Programming</span>
-        <span class="tag">HTML/CSS</span>
-        <span class="tag">GAMS</span>
-      </div>
-      <div style="margin-top: 1rem;">
-        <strong style="font-size: 0.85rem; color: var(--muted); display:block; margin-bottom:0.4rem;">Tools & Frameworks</strong>
-        <span class="tag">SAS Viya</span>
-        <span class="tag">VS Code</span>
-        <span class="tag">R Studio</span>
-        <span class="tag">GAMS Studio</span>
-        <span class="tag">QGIS</span>
-        <span class="tag">Arena</span>
-        
-        <span class="tag">Microsoft Excel</span>
-      </div>
-      <div style="margin-top: 1rem;">
-        <strong style="font-size: 0.85rem; color: var(--muted); display:block; margin-bottom:0.4rem;">Other</strong>
-        <span class="tag">Statistics</span>
-        <span class="tag">Technical Writing</span>
-        <span class="tag">Data Analysis and Visualization</span>
-      </div>
-    </section>
+      <hr />
 
-  </main>
+      <!-- Skills -->
+      <section id="skills" class="scroll-target">
+        <h2>Skills</h2>
+
+        <div style="margin-top: 0.5rem;">
+          <strong style="font-size: 0.85rem; color: var(--muted); display:block; margin-bottom:0.4rem;">Languages</strong>
+          <span class="tag">Python</span>
+          <span class="tag">R Programming</span>
+          <span class="tag">SAS Programming</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">GAMS</span>
+        </div>
+
+        <div style="margin-top: 1rem;">
+          <strong style="font-size: 0.85rem; color: var(--muted); display:block; margin-bottom:0.4rem;">Tools & Frameworks</strong>
+          <span class="tag">SAS Viya</span>
+          <span class="tag">VS Code</span>
+          <span class="tag">R Studio</span>
+          <span class="tag">GAMS Studio</span>
+          <span class="tag">QGIS</span>
+          <span class="tag">Arena</span>
+          <span class="tag">Microsoft Excel</span>
+        </div>
+
+        <div style="margin-top: 1rem;">
+          <strong style="font-size: 0.85rem; color: var(--muted); display:block; margin-bottom:0.4rem;">Other</strong>
+          <span class="tag">Statistics</span>
+          <span class="tag">Technical Writing</span>
+          <span class="tag">Data Analysis and Visualization</span>
+        </div>
+      </section>
+
+    </main>
+  </div>
 
   <!-- ===== Footer ===== -->
   <footer>
     <p>Built by hand · © 2026 Ella Cluff</p>
   </footer>
+
+  <script>
+    const sections = document.querySelectorAll('.scroll-target');
+    const links    = document.querySelectorAll('.sidebar a');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(l => l.classList.remove('toc-active'));
+          const active = document.querySelector(`.sidebar a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('toc-active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
 
 </body>
 </html>
